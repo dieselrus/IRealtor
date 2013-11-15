@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IRealtor</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="SearchType">Тип:</string>
+    <string name="SearchCity">Город:</string>
+    <string name="SearchRegion">Регион:</string>
+    <string name="SearchStreet">Улица:</string>
+    <string name="SearchRooms">Комнат:</string>
+	<string name="SearchCost">Цена:</string>
+</resources>

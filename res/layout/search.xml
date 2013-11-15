@@ -1,0 +1,206 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TableLayout 
+        android:id="@+id/TableView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1" >
+
+            <TextView
+                android:id="@+id/imageView1"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:text="@string/SearchType"
+		        android:layout_marginLeft="15dp"
+		        android:layout_marginTop="15dp"
+		        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+            <EditText
+                android:id="@+id/imageView2"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left|center"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/imageView3"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.5"
+                android:text="@string/SearchCity"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/imageView4"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.5"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/imageView5"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:text="@string/SearchRegion"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/imageView6"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/imageView7"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:text="@string/SearchStreet"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/imageView8"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/imageView9"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:text="@string/SearchRooms"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/imageView10"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/imageView9"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:text="@string/SearchCost"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/imageView10"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.5"
+                android:src="@drawable/ic_launcher"/>
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.5"
+                android:onClick="onClick"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_launcher"
+                android:tag="10" />
+            
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
