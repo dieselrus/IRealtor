@@ -10,4 +10,10 @@
     <string name="SearchStreet">Улица:</string>
     <string name="SearchRooms">Комнат:</string>
 	<string name="SearchCost">Цена:</string>
+	<string name="buttonSearch">Найти</string>
+	<string name="buttonCancel">Отмена</string>
+	<string name="buttonQuickSearch">Быстрый поиск</string>
+	<string name="buttonDeepSearch">Глубокий поиск</string>
+	<string name="buttonUpdate">Обновить</string>
+	<string name="buttonExit">Выйти</string>
 </resources>

@@ -2,7 +2,9 @@ package ru.dieselru.irealtor;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -19,4 +21,21 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	// Обработка нажатия
+    public void onClick(View v){
+//            Toast.makeText(getApplicationContext(), "Click view id " + v.getId() + " " + viewPager.getCurrentItem(), Toast.LENGTH_SHORT).show();
+//            //Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
+//            roomNum = viewPager.getCurrentItem() + 1;
+//            //tableNum = (int) v.getTag();
+//            tableNum = Integer.valueOf((String) v.getTag());
+//            
+//            sendData("|ReadTableData|" + roomNum + "-"+ tableNum + "|\n");
+            
+//            Intent intent = new Intent(MainActivity.this, ViewStatus.class);
+//        startActivity(intent);
+    	
+    	Intent intent = new Intent(MainActivity.this, Search.class);
+        startActivity(intent);
+
+    }
 }

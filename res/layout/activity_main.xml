@@ -9,23 +9,46 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/btNewSearch"
+        android:id="@+id/buttonQuickSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="56dp"
-        android:text="Button" />
+        android:onClick="onClick"
+        android:text="@string/buttonQuickSearch" />
 
     <Button
         android:id="@+id/btUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btNewSearch"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/btNewSearch"
-        android:layout_marginTop="29dp"
-        android:text="Button" />
+        android:layout_alignLeft="@+id/buttonDeepSearch"
+        android:layout_alignRight="@+id/buttonDeepSearch"
+        android:layout_centerVertical="true"
+        android:onClick="onClick"
+        android:text="@string/buttonUpdate" />
+
+    <Button
+        android:id="@+id/buttonDeepSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonQuickSearch"
+        android:layout_alignRight="@+id/buttonQuickSearch"
+        android:layout_below="@+id/buttonQuickSearch"
+        android:layout_marginTop="16dp"
+        android:onClick="onClick"
+        android:text="@string/buttonDeepSearch" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btUpdate"
+        android:layout_alignRight="@+id/btUpdate"
+        android:layout_below="@+id/btUpdate"
+        android:layout_marginTop="23dp"
+        android:onClick="onClick"
+        android:text="@string/buttonExit" />
 
 </RelativeLayout>
