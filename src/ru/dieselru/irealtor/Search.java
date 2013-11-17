@@ -1,7 +1,9 @@
 package ru.dieselru.irealtor;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -67,6 +69,7 @@ public class Search extends Activity {
 		ArrayAdapter adapterRooms = new ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayRooms);
 		spinnerRooms.setAdapter(adapterRooms);
 		
+		sqlRead("");
 	}
 	
 	// Обработка нажатия
@@ -83,6 +86,20 @@ public class Search extends Activity {
 //    	Intent intent = new Intent(MainActivity.this, EditStatus.class);
 //        startActivity(intent);
 
+    }
+    
+    String[] sqlRead(String _table){
+    	String array[] = null;
+    	
+        DbOpenHelper dbOpenHelper = new DbOpenHelper(Search.this);
+        SQLiteDatabase db = dbOpenHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+//        cv.put(DbOpenHelper.LOGIN,loginEditText.getText().toString());
+//        cv.put(DbOpenHelper.PASSW,passEditText.getText().toString());
+        db.insert(DbOpenHelper.TABLE_NAME,null,cv);
+        db.close();
+    	
+    	return array ;
     }
 
 }

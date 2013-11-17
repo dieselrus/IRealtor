@@ -9,7 +9,7 @@
     <string name="SearchRegion">Регион:</string>
     <string name="SearchStreet">Улица:</string>
     <string name="SearchRooms">Комнат:</string>
-	<string name="SearchCost">Цена:</string>
+	<string name="SearchCost">Цена до:</string>
 	<string name="buttonSearch">Найти</string>
 	<string name="buttonCancel">Отмена</string>
 	<string name="buttonQuickSearch">Быстрый поиск</string>
