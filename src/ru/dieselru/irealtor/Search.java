@@ -1,53 +1,83 @@
 package ru.dieselru.irealtor;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 
 public class Search extends Activity {
 	
 	private String arrayTypes[], arrayCitys[], arrayRegions[], arrayStreets[], arrayRooms[];
 
-
+//	DbOpenHelper dbHelper;
+	MyDatabase db;
+	String LOG_TAG = "sqlite";
+	private Cursor _cursor;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.search);
 	
-		arrayTypes=new String[4];
-		arrayTypes[0]="Квартира";
-		arrayTypes[1]="Катедж";
-		arrayTypes[2]="Дом";
-		arrayTypes[3]="Участок";
+		
+		// создаем объект для создания и управления версиями БД
+		db = new MyDatabase(this);
+		_cursor = db.getTypes();
+		
+		ArrayList strings = new ArrayList();
+		
+		for(_cursor.moveToFirst(); !_cursor.isAfterLast(); _cursor.moveToNext()) {
+			   String mTitleRaw = _cursor.getString(_cursor.getColumnIndex("Name"));
+			   strings.add(mTitleRaw);
+			}
+		String[] arrayTypes = (String[]) strings.toArray(new String[strings.size()]);
+		
+		strings.clear();
+		//_cursor.close();
 		
 		Spinner spinnerType = (Spinner) findViewById(R.id.editType);
 		ArrayAdapter adapterType = new ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayTypes);
+		//ArrayAdapter adapterType = new ArrayAdapter(this, android.R.layout.simple_spinner_item, adapter);
 		spinnerType.setAdapter(adapterType);
+	
 		
-		arrayCitys=new String[3];
-		arrayCitys[0]="Иркутск";
-		arrayCitys[1]="Ангарск";
-		arrayCitys[2]="Шелехов";
+		_cursor = db.getCitys();
+		
+		for(_cursor.moveToFirst(); !_cursor.isAfterLast(); _cursor.moveToNext()) {
+			   String mTitleRaw = _cursor.getString(_cursor.getColumnIndex("Name"));
+			   strings.add(mTitleRaw);
+			}
+		String[] arrayCitys = (String[]) strings.toArray(new String[strings.size()]);
 		
 		Spinner spinnerCity = (Spinner) findViewById(R.id.editCity);
 		ArrayAdapter adapterCity = new ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayCitys);
 		spinnerCity.setAdapter(adapterCity);
 		
-		arrayRegions=new String[4];
-		arrayRegions[0]="Правобережный";
-		arrayRegions[1]="Ленинский";
-		arrayRegions[2]="Свердловский";
-		arrayRegions[3]="Октябрьский";
+		strings.clear();
+
+		_cursor = db.getRegions();
+		
+		for(_cursor.moveToFirst(); !_cursor.isAfterLast(); _cursor.moveToNext()) {
+			   String mTitleRaw = _cursor.getString(_cursor.getColumnIndex("Name"));
+			   strings.add(mTitleRaw);
+			}
+		String[] arrayRegions = (String[]) strings.toArray(new String[strings.size()]);
 		
 		Spinner spinnerRegion = (Spinner) findViewById(R.id.editRegion);
 		ArrayAdapter adapterRegion = new ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayRegions);
 		spinnerRegion.setAdapter(adapterRegion);
 		
+		strings.clear();
+/*		
 		arrayStreets=new String[4];
 		arrayStreets[0]="ул. Кожова";
 		arrayStreets[1]="мрн. Университетский";
@@ -70,6 +100,8 @@ public class Search extends Activity {
 		spinnerRooms.setAdapter(adapterRooms);
 		
 		sqlRead("");
+*/		
+//		dbHelper.close();
 	}
 	
 	// Обработка нажатия
