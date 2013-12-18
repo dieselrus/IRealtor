@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:padding="15dp" 
+    android:stretchColumns="2"
+    android:shrinkColumns="2">
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/SearchCity"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/editCity"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" >
+
+            <requestFocus />
+        </Spinner>
+
+    </TableRow>
+
+    <TableRow
+    	android:id="@+id/tableRow2"
+      	android:layout_width="0dp"
+       	android:layout_weight="1"
+       	android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/SearchRegion"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/editRegion"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10" 
+            android:inputType="text">
+
+            <requestFocus />
+        </Spinner>
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/SearchType"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/editeditType"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10" 
+            android:inputType="text">
+
+            <requestFocus />
+        </Spinner>
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/SearchDeal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/editDeal"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10" 
+            android:inputType="text">
+
+            <requestFocus />
+        </Spinner>
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/SearchRooms"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editRoom"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10" 
+            android:inputType="number"
+            android:textAlignment="textEnd">
+
+            <requestFocus />
+        </EditText>
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/SearchCost"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editCost"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" 
+            android:textAlignment="textEnd">
+
+            <requestFocus />
+        </EditText>
+
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnCancelQuickSearch"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:text="@string/buttonCancel" />
+
+        <Button
+            android:id="@+id/btnQuicSearch"
+            android:layout_width="0dp"
+        	android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:text="@string/buttonSearch" />
+
+    </TableRow>
+</TableLayout>

@@ -12,7 +12,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true" 
+        >
 	
 		    <TableRow
 				android:id="@+id/tableRow"
@@ -32,13 +33,13 @@
 		            android:textAppearance="?android:attr/textAppearanceLarge" />
 		
 		        <EditText
-		            android:id="@+id/editType"
+		            android:id="@+id/editType2"
 		            android:layout_width="1dp"
 		            android:layout_height="fill_parent"
 		            android:layout_gravity="left"
-		            android:layout_weight="0.5"
 		            android:layout_marginRight="15dp"
 		            android:layout_marginTop="15dp"
+		            android:layout_weight="0.5"
 		            android:ems="10" >
 		
 		            <requestFocus />
@@ -64,13 +65,13 @@
 		            android:textAppearance="?android:attr/textAppearanceLarge" />
 		
 		        <EditText
-		            android:id="@+id/editCity"
+		            android:id="@+id/editCity2"
 		            android:layout_width="1dp"
 		            android:layout_height="fill_parent"
 		            android:layout_gravity="left"
-		            android:layout_weight="0.5" 
 		            android:layout_marginRight="15dp"
 		            android:layout_marginTop="15dp"
+		            android:layout_weight="0.5"
 		            android:ems="10" >
 		
 		            <requestFocus />
@@ -96,7 +97,7 @@
 		            android:textAppearance="?android:attr/textAppearanceLarge" />
 		
 		        <EditText
-		            android:id="@+id/editRegion"
+		            android:id="@+id/editRegion2"
 		            android:layout_width="fill_parent"
 		            android:layout_height="fill_parent"
 		            android:layout_weight="0.5" 
@@ -127,7 +128,7 @@
 		            android:textAppearance="?android:attr/textAppearanceLarge" />
 		
 		        <EditText
-		            android:id="@+id/editStreet"
+		            android:id="@+id/editStreet2"
 		            android:layout_width="fill_parent"
 		            android:layout_weight="0.5" 
 		            android:layout_height="fill_parent"
@@ -156,7 +157,7 @@
 		            android:textAppearance="?android:attr/textAppearanceLarge" />
 		
 		        <EditText
-		            android:id="@+id/editRooms"
+		            android:id="@+id/editRooms2"
 		            android:layout_width="fill_parent"
 		            android:layout_height="fill_parent"
 		            android:layout_weight="0.5" 
@@ -187,7 +188,7 @@
 		            android:textAppearance="?android:attr/textAppearanceLarge" />
 		
 		        <EditText
-		            android:id="@+id/editCost"
+		            android:id="@+id/editCost2"
 		            android:layout_width="fill_parent"
 		            android:layout_height="fill_parent"
 		            android:layout_weight="0.5" 
@@ -207,7 +208,7 @@
 		    	android:layout_weight="0.1" >
 		
 		        <Button
-		            android:id="@+id/btSearch"
+		            android:id="@+id/btSearch2"
 		            android:layout_width="1dp"
 		            android:layout_height="fill_parent"
 		            android:layout_gravity="left"
@@ -215,7 +216,7 @@
 		            android:text="Button" />
 		
 		        <Button
-		            android:id="@+id/btClean"
+		            android:id="@+id/btClean2"
 		            android:layout_width="1dp"
 		            android:layout_height="fill_parent"
 		            android:layout_gravity="left"

@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 
 public class MainActivity extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 //            Intent intent = new Intent(MainActivity.this, ViewStatus.class);
 //        startActivity(intent);
     	
-    	Intent intent = new Intent(MainActivity.this, Search.class);
+    	Intent intent = new Intent(MainActivity.this, QuickSearch.class);
         startActivity(intent);
 
     }
