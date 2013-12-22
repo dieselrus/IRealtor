@@ -1,5 +1,7 @@
 package ru.dieselru.irealtor;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,107 +11,104 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class QuickSearch extends Activity {
 
 	final String LOG_TAG = "myLogs";
 	
 	private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
-    private static String DB_NAME = "myDBName";
+    private static String DB_NAME = "irealtor.db";
     private static final int DATABASE_VERSION = 1;
-    private SQLiteDatabase myDataBase;
+    private SQLiteDatabase database;
    
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.quicks_earch);
+		setContentView(R.layout.quicks_search);
 
-		// Подключаемся к БД
-		DBHelper dbh = new DBHelper(this);
-		SQLiteDatabase db = dbh.getWritableDatabase();
-
-		// Описание курсора
-		Cursor c;
-
-		String sqlQuery = "select * "
-				+ "from data ";
-				//+ "inner join position as PS "
-				//+ "on PL.posid = PS.id " + "where salary > ?";
-		c = db.rawQuery(sqlQuery, new String[] { "12000" });
-		logCursor(c);
-		c.close();
-		    
-		dbh.close();
-	}
-
-	// вывод в лог данных из курсора
-	void logCursor(Cursor c) {
-		if (c != null) {
-			if (c.moveToFirst()) {
-				String str;
-				do {
-					str = "";
-					for (String cn : c.getColumnNames()) {
-						str = str.concat(cn + " = " + c.getString(c.getColumnIndex(cn)) + "; ");
-					}
-					Log.d(LOG_TAG, str);
-				} while (c.moveToNext());
-			}
-		} else
-			Log.d(LOG_TAG, "Cursor is null");
-	}
-
-	// класс для работы с БД
-	class DBHelper extends SQLiteOpenHelper {
-
-		private final Context myContext;
-		 
-//		public DBHelper(Context context) {
-//			super(context, "DB_NAME", null, DATABASE_VERSION);
-//		}
-
-		public DBHelper(Context context) {
-	    	super(context, DB_NAME, null, DATABASE_VERSION);
-	        this.myContext = context;
-	    }
-
-
-		public void onCreate(SQLiteDatabase db) {
-			Log.d(LOG_TAG, "--- onCreate database ---");
-
-//			ContentValues cv = new ContentValues();
-//
-//			// создаем таблицу должностей
-//			db.execSQL("create table position (" + "id integer primary key,"
-//					+ "name text," + "salary integer" + ");");
-//
-//			// заполняем ее
-//			for (int i = 0; i < position_id.length; i++) {
-//				cv.clear();
-//				cv.put("id", position_id[i]);
-//				cv.put("name", position_name[i]);
-//				cv.put("salary", position_salary[i]);
-//				db.insert("position", null, cv);
-//			}
-//
-//			// создаем таблицу людей
-//			db.execSQL("create table people ("
-//					+ "id integer primary key autoincrement," + "name text,"
-//					+ "posid integer" + ");");
-//
-//			// заполняем ее
-//			for (int i = 0; i < people_name.length; i++) {
-//				cv.clear();
-//				cv.put("name", people_name[i]);
-//				cv.put("posid", people_posid[i]);
-//				db.insert("people", null, cv);
-//			}
+		//Ќаш ключевой хелпер
+        ExternalDbOpenHelper dbOpenHelper = new ExternalDbOpenHelper(this, DB_NAME);
+        database = dbOpenHelper.openDataBase();
+        //‚се, база открыта!
+        
+        // адаптер
+        ArrayList arrCity = new ArrayList<String>();
+		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
+		//				     null, null,null,null, FRIEND_NAME);
+		Cursor _cursorCity = database.query("City", new String[] {"_id", "name"}, null, null,null,null, "name");
+		
+		_cursorCity.moveToFirst();
+		if(!_cursorCity.isAfterLast()) {
+			do {
+				String name = _cursorCity.getString(1);
+				arrCity.add(name);
+			} while (_cursorCity.moveToNext());
 		}
-
-		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+		_cursorCity.close();
+		
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrCity);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
+        Spinner spinner = (Spinner) findViewById(R.id.editCity);
+        spinner.setAdapter(adapter);
+        
+        ArrayList arrType = new ArrayList<String>();
+		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
+		//				     null, null,null,null, FRIEND_NAME);
+		Cursor _cursorType = database.query("Types", new String[] {"_id", "name"}, null, null,null,null, "name");
+		
+		_cursorType.moveToFirst();
+		if(!_cursorType.isAfterLast()) {
+			do {
+				String name = _cursorType.getString(1);
+				arrType.add(name);
+			} while (_cursorType.moveToNext());
 		}
+		_cursorType.close();
+		
+        ArrayAdapter<String> adapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrType);
+        adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
+        Spinner spinnerType = (Spinner) findViewById(R.id.editType);
+        spinnerType.setAdapter(adapterType);
+        
+        ArrayList arrRegion = new ArrayList<String>();
+		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
+		//				     null, null,null,null, FRIEND_NAME);
+		Cursor _cursorRegion = database.query("Regions", new String[] {"_id", "name"}, null, null,null,null, "name");
+		
+		_cursorRegion.moveToFirst();
+		if(!_cursorRegion.isAfterLast()) {
+			do {
+				String name = _cursorRegion.getString(1);
+				arrRegion.add(name);
+			} while (_cursorRegion.moveToNext());
+		}
+		_cursorRegion.close();
+		
+        ArrayAdapter<String> adapterRegion = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrRegion);
+        adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
+        Spinner spinnerRegion = (Spinner) findViewById(R.id.editRegion);
+        spinnerRegion.setAdapter(adapterRegion);
+        //database.close();
 	}
+
+	@Override
+	protected void onDestroy() {
+		database.close();
+		super.onDestroy();		
+	}
+
+	@Override
+	protected void onPause() {
+		database.close();
+		super.onPause();
+	}
+	
+	
 }

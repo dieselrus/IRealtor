@@ -13,7 +13,7 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textObject"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:text="@string/SearchCity"
@@ -39,7 +39,7 @@
        	android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textCost"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:text="@string/SearchRegion"
@@ -65,19 +65,19 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textRoom"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:text="@string/SearchType"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/editeditType"
+            android:id="@+id/editType"
             android:layout_width="0dp"
-        	android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:ems="10" 
-            android:inputType="text">
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text" >
 
             <requestFocus />
         </Spinner>
@@ -100,10 +100,10 @@
         <Spinner
             android:id="@+id/editDeal"
             android:layout_width="0dp"
-        	android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:ems="10" 
-            android:inputType="text">
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text" >
 
             <requestFocus />
         </Spinner>
@@ -126,11 +126,11 @@
         <EditText
             android:id="@+id/editRoom"
             android:layout_width="0dp"
-        	android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:ems="10" 
+            android:layout_weight="1"
+            android:ems="10"
             android:inputType="number"
-            android:textAlignment="textEnd">
+            android:textAlignment="viewEnd" >
 
             <requestFocus />
         </EditText>
@@ -153,11 +153,11 @@
         <EditText
             android:id="@+id/editCost"
             android:layout_width="0dp"
-        	android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
-            android:inputType="number" 
-            android:textAlignment="textEnd">
+            android:inputType="number"
+            android:textAlignment="viewEnd" >
 
             <requestFocus />
         </EditText>
