@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -110,5 +112,20 @@ public class QuickSearch extends Activity {
 		super.onPause();
 	}
 	
-	
+	// Обработка нажатия
+    public void onClick(View v){
+//            Toast.makeText(getApplicationContext(), "Click view id " + v.getId() + " " + viewPager.getCurrentItem(), Toast.LENGTH_SHORT).show();
+//            //Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
+//            roomNum = viewPager.getCurrentItem() + 1;
+//            //tableNum = (int) v.getTag();
+//            tableNum = Integer.valueOf((String) v.getTag());
+//            
+//            sendData("|ReadTableData|" + roomNum + "-"+ tableNum + "|\n");
+            
+//            Intent intent = new Intent(MainActivity.this, ViewStatus.class);
+//        startActivity(intent);
+    	
+    	Intent intent = new Intent(QuickSearch.this, SearchResult.class);
+        startActivity(intent);
+    }
 }

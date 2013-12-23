@@ -181,7 +181,8 @@
             android:layout_width="0dp"
         	android:layout_weight="1"
             android:layout_height="fill_parent"
-            android:text="@string/buttonSearch" />
+            android:text="@string/buttonSearch"
+            android:onClick="onClick" />
 
     </TableRow>
 </TableLayout>
