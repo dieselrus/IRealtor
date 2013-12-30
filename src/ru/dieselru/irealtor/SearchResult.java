@@ -13,7 +13,7 @@ public class SearchResult extends Activity {
 	public static String strCity = "";
 	public static String strRegion = "";
 	public static String  strType = "";
-	public static String strDeal = "";
+	public static String strStatus = "";
 	public static String strRoom = "";
 	public static String strCost = "";
 
@@ -38,7 +38,7 @@ public class SearchResult extends Activity {
         
 		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
 		//				     null, null,null,null, FRIEND_NAME);
-		Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, null, null,null,null, "cost");
+		Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, "city = ? AND region = ? AND type = ? AND status = ? AND room <= ? AND cost <= ?", new String[] {strCity, strRegion, strType, strStatus, strRoom, strCost},null,null, "cost");
 		
 		_cursorRealty.moveToFirst();
 		if(!_cursorRealty.isAfterLast()) {

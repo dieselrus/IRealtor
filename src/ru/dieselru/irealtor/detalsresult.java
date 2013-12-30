@@ -34,10 +34,10 @@ public class detalsresult extends Activity {
         //Все, база открыта!
         
         // адаптер
-        ArrayList arrCity = new ArrayList<String>();
+        ArrayList arrObject = new ArrayList<String>();
 		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
 		//				     null, null,null,null, FRIEND_NAME);
-		Cursor _cursorCity = database.query("data", new String[] {"_id", "type", "city", "region", "street", "home", "room", "floor", "storey", "material", "gross_area", "living_space", "kitchen_area", "cost", "comment"}, null, null,null,null, "cost");
+		Cursor _cursorObject = database.query("data", new String[] {"_id", "type", "city", "region", "street", "home", "room", "floor", "storey", "material", "gross_area", "living_space", "kitchen_area", "cost", "comment"}, null, null,null,null, "cost");
 		
 		// Использование собственного шаблона
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.detalsviewrowlayout, R.id.label, values);

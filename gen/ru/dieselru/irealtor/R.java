@@ -40,13 +40,13 @@ public final class R {
         public static final int buttonSearch=0x7f090026;
         public static final int editCity=0x7f090008;
         public static final int editCost=0x7f090015;
-        public static final int editDeal=0x7f09000f;
         public static final int editRegion=0x7f09000a;
         public static final int editRoom=0x7f090012;
         public static final int editRooms=0x7f090024;
         public static final int editStreet=0x7f090022;
         public static final int editType=0x7f09000c;
         public static final int editType2=0x7f09001e;
+        public static final int editstrStatus=0x7f09000f;
         public static final int lvMain=0x7f090019;
         public static final int tableRow=0x7f09001c;
         public static final int tableRow1=0x7f090007;
@@ -83,9 +83,9 @@ public final class R {
     public static final class string {
         public static final int SearchCity=0x7f060004;
         public static final int SearchCost=0x7f060008;
-        public static final int SearchDeal=0x7f06000f;
         public static final int SearchRegion=0x7f060005;
         public static final int SearchRooms=0x7f060007;
+        public static final int SearchStatus=0x7f06000f;
         public static final int SearchStreet=0x7f060006;
         public static final int SearchType=0x7f060003;
         public static final int action_settings=0x7f060001;
