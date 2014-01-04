@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Environment;
+//import android.os.Environment;
 import android.widget.ListView;
 
 public class SearchResult extends Activity {
@@ -17,9 +17,9 @@ public class SearchResult extends Activity {
 	public static String strRoom = "";
 	public static String strCost = "";
 
-	private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
+	//private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
     private static String DB_NAME = "irealtor.db";
-    private static final int DATABASE_VERSION = 1;
+    //private static final int DATABASE_VERSION = 1;
     private SQLiteDatabase database;
     
     ArrayList<RealtyObject> RealtyObjects = new ArrayList<RealtyObject>();
@@ -27,7 +27,6 @@ public class SearchResult extends Activity {
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.resultlayout);
 		
@@ -44,7 +43,7 @@ public class SearchResult extends Activity {
 		if(!_cursorRealty.isAfterLast()) {
 			do {
 				//String name = _cursorRealty.getString(1);
-				RealtyObjects.add(new RealtyObject(_cursorRealty.getString(1), "Комнат: " + _cursorRealty.getString(2), "Цена: " + _cursorRealty.getString(3) + " руб."));
+				RealtyObjects.add(new RealtyObject(_cursorRealty.getString(1), getString(R.string.Rooms) + ": " + _cursorRealty.getString(2), getString(R.string.Cost) + ": " + _cursorRealty.getString(3) + " руб."));
 			} while (_cursorRealty.moveToNext());
 		}
 		_cursorRealty.close();

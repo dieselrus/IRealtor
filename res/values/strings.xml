@@ -17,4 +17,6 @@
 	<string name="buttonUpdate">Обновить</string>
 	<string name="buttonExit">Выйти</string>
 	<string name="SearchStatus">Статус:</string>
+	<string name="Cost">Цена :</string>
+	<string name="Rooms">Комнат :</string>
 </resources>

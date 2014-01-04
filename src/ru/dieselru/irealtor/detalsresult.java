@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Environment;
+//import android.os.Environment;
 import android.widget.ArrayAdapter;
 
 public class detalsresult extends Activity {
@@ -17,14 +17,13 @@ public class detalsresult extends Activity {
 	public static String strRoom = "";
 	public static String strCost = "";
 
-	private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
+	//private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
     private static String DB_NAME = "irealtor.db";
-    private static final int DATABASE_VERSION = 1;
+    //private static final int DATABASE_VERSION = 1;
     private SQLiteDatabase database;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detalsviewrowlayout);
 		
@@ -44,9 +43,8 @@ public class detalsresult extends Activity {
         //setListAdapter(adapter);
 	}
 
-	private void setListAdapter(ArrayAdapter<String> adapter) {
-		// TODO Auto-generated method stub
+	//private void setListAdapter(ArrayAdapter<String> adapter) {
 		
-	}
+	//}
 
 }

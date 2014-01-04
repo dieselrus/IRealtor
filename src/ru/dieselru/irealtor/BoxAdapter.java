@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
 public class BoxAdapter extends BaseAdapter {
@@ -18,8 +16,7 @@ public class BoxAdapter extends BaseAdapter {
 	BoxAdapter(Context context, ArrayList<RealtyObject> RealtyObjects) {
 		ctx = context;
 		objects = RealtyObjects;
-		lInflater = (LayoutInflater) ctx
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		lInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 
 	// кол-во элементов

@@ -116,7 +116,7 @@ public class QuickSearch extends Activity {
 		_cursorStatus.moveToFirst();
 		if(!_cursorStatus.isAfterLast()) {
 			do {
-				String name = _cursorRegion.getString(1);
+				String name = _cursorStatus.getString(1);
 				arrStatus.add(name);
 			} while (_cursorStatus.moveToNext());
 		}
@@ -125,9 +125,14 @@ public class QuickSearch extends Activity {
         ArrayAdapter<String> adapterStatus = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrStatus);
         adapterStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         
-        spinnerStatus = (Spinner) findViewById(R.id.editRegion);
+        spinnerStatus = (Spinner) findViewById(R.id.editstrStatus);
         spinnerStatus.setAdapter(adapterStatus);
         //database.close();
+        
+        arrCity.clear();
+        arrRegion.clear();
+        arrStatus.clear();
+        arrType.clear();
 	}
 
 	@Override

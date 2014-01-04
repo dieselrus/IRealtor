@@ -149,12 +149,13 @@
                 android:gravity="center_vertical"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <Spinner
+            <EditText
                 android:id="@+id/editRooms"
                 android:layout_width="1dp"
                 android:layout_height="fill_parent"
                 android:layout_gravity="left"
                 android:layout_marginRight="15dp"
+                android:inputType="number"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_weight="0.3"/>
             
