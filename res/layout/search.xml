@@ -1,0 +1,231 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TableLayout 
+        android:id="@+id/TableView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1" >
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:text="@string/SearchType"
+		        android:layout_marginLeft="15dp"
+		        android:layout_marginTop="5dp"
+		        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+            <Spinner
+                android:id="@+id/editType2"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_marginRight="15dp"
+                android:layout_weight="0.5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity="center_vertical"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/tvCity"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.5"
+                android:text="@string/SearchCity"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Spinner
+                android:id="@+id/editCity"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_marginRight="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0.5"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/tvRegion"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.3"
+                android:gravity="center_vertical"
+                android:text="@string/SearchRegion"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Spinner
+                android:id="@+id/editRegion"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_marginRight="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/tvStreet"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.3"
+                android:text="@string/SearchStreet"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Spinner
+                android:id="@+id/editStreet"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_marginRight="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/tvRooms"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.3"
+                android:text="@string/SearchRooms"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/editRooms"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_marginRight="15dp"
+                android:inputType="number"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <TextView
+                android:id="@+id/tvCost"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.3"
+                android:text="@string/SearchCost"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/editCost"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_marginRight="15dp"
+                android:inputType="text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0.3"/>
+            
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="fill_parent"  
+		    android:layout_height="1dp"  
+    		android:layout_weight="0.1">
+            
+            <Button
+                android:id="@+id/buttonSearch"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.5"
+                android:onClick="onClick"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:scaleType="center"
+                android:tag="10"
+                android:text="@string/buttonSearch" />
+
+            <Button
+                android:id="@+id/buttonCancel"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left"
+                android:layout_weight="0.5"
+                android:onClick="onClick"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:scaleType="center"
+                android:tag="10"
+                android:text="@string/buttonCancel" />
+            
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

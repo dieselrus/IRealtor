@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IRealtor</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="SearchType">Тип:</string>
+    <string name="SearchCity">Город:</string>
+    <string name="SearchRegion">Регион:</string>
+    <string name="SearchStreet">Улица:</string>
+    <string name="SearchRooms">Комнат до:</string>
+	<string name="SearchCost">Цена до:</string>
+	<string name="buttonSearch">Найти</string>
+	<string name="buttonCancel">Отмена</string>
+	<string name="buttonQuickSearch">Быстрый поиск</string>
+	<string name="buttonDeepSearch">Детальный поиск</string>
+	<string name="buttonUpdate">Обновить</string>
+	<string name="buttonExit">Выйти</string>
+	<string name="SearchStatus">Статус:</string>
+	<string name="Cost">Цена :</string>
+	<string name="Rooms">Комнат :</string>
+	<string name="drStreet">Улица:</string>
+	<string name="drRooms">Комнат:</string>
+	<string name="drFloor">Этаж:</string>
+	<string name="drStorrey">Этажность:</string>
+	<string name="drGrossArea">Общая пл.:</string>
+	<string name="drLivingSpace">Жилая пл.</string>
+	<string name="drKitchenArea">Пл. кухни:</string>
+	<string name="drPhone">Телефон:</string>
+	<string name="drComment">Коммент.:</string>
+	<string name="drMaterial">Материал:</string>
+	<string name="Call">Позвонить</string>
+</resources>
