@@ -45,10 +45,12 @@ public class QuickSearch extends Activity {
         //Все, база открыта!
         
         editRoom = (EditText) findViewById(R.id.editRoom);
+        editRoom.setText("*");
         editCost = (EditText) findViewById(R.id.editCost);
+        editCost.setText("*");
         
         // адаптер
-        ArrayList arrCity = new ArrayList<String>();
+        ArrayList arrCity = new ArrayList<String>();        
 		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
 		//				     null, null,null,null, FRIEND_NAME);
 		Cursor _cursorCity = database.query("City", new String[] {"_id", "name"}, null, null,null,null, "name");

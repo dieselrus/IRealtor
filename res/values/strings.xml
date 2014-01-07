@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="SearchType">Тип:</string>
     <string name="SearchCity">Город:</string>
-    <string name="SearchRegion">Регион:</string>
+    <string name="SearchRegion">Район:</string>
     <string name="SearchStreet">Улица:</string>
     <string name="SearchRooms">Комнат до:</string>
 	<string name="SearchCost">Цена до:</string>

@@ -1,7 +1,7 @@
 package ru.dieselru.irealtor;
 
 import java.util.ArrayList;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,12 +16,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class SearchResult extends Activity {
-	public static String strCity = "";
-	public static String strRegion = "";
-	public static String  strType = "";
-	public static String strStatus = "";
-	public static String strRoom = "";
-	public static String strCost = "";
+	public static String strCity = null;
+	public static String strRegion = null;
+	public static String  strType = null;
+	public static String strStatus = null;
+	public static String strRoom = null;
+	public static String strCost = null;
 
 	//private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
     private static String DB_NAME = "irealtor.db";
@@ -32,6 +32,7 @@ public class SearchResult extends Activity {
     BoxAdapter boxAdapter;
     ListView lvMain;
     
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,8 +45,26 @@ public class SearchResult extends Activity {
         
 		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
 		//				     null, null,null,null, FRIEND_NAME);
-		Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, "city = ? AND region = ? AND type = ? AND room <= ? AND cost <= ?", new String[] {strCity, strRegion, strType, strRoom, strCost},null,null, "cost");
+        String[] _param = null;
+        String _query = null;
 		
+		if(!"*".equals(strRoom) && !"*".equals(strCost)){
+			_param = new String [] {strCity, strRegion, strType, strRoom, strCost};
+			_query = "city = ? AND region = ? AND type = ? AND room = ? AND cost <= ?";
+		}else if ("*".equals(strRoom) && !"*".equals(strCost)) {
+			_param = new String [] {strCity, strRegion, strType, strCost};
+			_query = "city = ? AND region = ? AND type = ? AND cost <= ?";
+		}else if (!"*".equals(strRoom) && "*".equals(strCost)) {
+			_param = new String [] {strCity, strRegion, strType, strRoom};
+			_query = "city = ? AND region = ? AND type = ? AND room = ?";
+		}else if ("*".equals(strRoom) && "*".equals(strCost)) {
+			_param = new String [] {strCity, strRegion, strType};
+			_query = "city = ? AND region = ? AND type = ?";
+		}
+		
+		//Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, "city = ? AND region = ? AND type = ? AND room = ? AND cost <= ?", new String[] {strCity, strRegion, strType, strRoom, strCost},null,null, "cost");
+		Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, _query, _param, null, null, "cost");
+				
 		_cursorRealty.moveToFirst();
 		if(!_cursorRealty.isAfterLast()) {
 			do {
