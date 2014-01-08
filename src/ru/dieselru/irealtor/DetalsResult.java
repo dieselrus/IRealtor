@@ -71,7 +71,7 @@ public class DetalsResult extends Activity {
         ArrayList arrObject = new ArrayList<String>();
 		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
 		//				     null, null,null,null, FRIEND_NAME);
-		Cursor _cursorObject = database.query("data", new String[] {"street", "home", "room", "floor", "storey", "material", "gross_area", "living_space", "kitchen_area", "cost", "comment", "phone"}, "_id = ?", new String[] {_id},null,null, "cost");
+		Cursor _cursorObject = database.query("data", new String[] {"street", "home", "room", "floor", "storey", "material", "gross_area", "living_space", "kitchen_area", "cost", "comment", "phone", "region"}, "_id = ?", new String[] {_id},null,null, "cost");
 		
 		_cursorObject.moveToFirst();
 		if(!_cursorObject.isAfterLast()) {
@@ -90,6 +90,7 @@ public class DetalsResult extends Activity {
 //			    tvMaterial.setText(_cursorObject.getString(5));
 //			    tvComment.setText(_cursorObject.getString(10));
 			    
+				DetalsResultObject.add(new DetalsResultObject(getString(R.string.SearchRegion), _cursorObject.getString(12)));
 			    DetalsResultObject.add(new DetalsResultObject(getString(R.string.drStreet), _cursorObject.getString(0)));
 			    DetalsResultObject.add(new DetalsResultObject(getString(R.string.drRooms), _cursorObject.getString(2)));
 			    DetalsResultObject.add(new DetalsResultObject(getString(R.string.drFloor), _cursorObject.getString(3)));

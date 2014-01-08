@@ -32,7 +32,6 @@ public class SearchResult extends Activity {
     BoxAdapter boxAdapter;
     ListView lvMain;
     
-	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,24 +44,64 @@ public class SearchResult extends Activity {
         
 		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
 		//				     null, null,null,null, FRIEND_NAME);
-        String[] _param = null;
+        //String[] _param = null;
+        //String _query = null;
+        
+        ArrayList<String> _arrParam = new ArrayList<String>();
+        //String[] _param = null;
         String _query = null;
+        
+        // City
+        _arrParam.add(strCity);
+        _query = "city = ?";
+        
+        // Region
+        if(!"*".equals(strRegion)){
+        	_arrParam.add(strRegion);
+        	_query += " AND region = ?";
+        }
+        
+        // Type
+        _arrParam.add(strType);
+        _query += " AND type = ?";
+        
+        // Status
+        _arrParam.add(strStatus);
+        _query += " AND Status = ?";
+        
+        // Room
+        if(!"*".equals(strRoom)){
+        	_arrParam.add(strRoom);
+        	_query += " AND room = ?";
+        }
+        
+        // Cost
+        if(!"*".equals(strCost)){
+        	_arrParam.add(strCost);
+        	_query += " AND cost <= ?";
+        }
+        
+        
+//		if(!"*".equals(strRoom) && !"*".equals(strCost)){
+//			//_param = new String [] {strCity, strRegion, strType, strStatus,strRoom, strCost};
+//			_query = "city = ? AND region = ? AND type = ? AND Status = ? AND room = ? AND cost <= ?";
+//		}else if ("*".equals(strRoom) && !"*".equals(strCost)) {
+//			//_param = new String [] {strCity, strRegion, strType, strStatus, strCost};
+//			_query = "city = ? AND region = ? AND type = ? AND Status = ? AND cost <= ?";
+//		}else if (!"*".equals(strRoom) && "*".equals(strCost)) {
+//			//_param = new String [] {strCity, strRegion, strType, strStatus, strRoom};
+//			_query = "city = ? AND region = ? AND type = ? AND Status = ? AND room = ?";
+//		}else if ("*".equals(strRoom) && "*".equals(strCost)) {
+//			//_param = new String [] {strCity, strRegion, strType, strStatus};
+//			_query = "city = ? AND region = ? AND type = ? AND Status = ?";
+//		}
 		
-		if(!"*".equals(strRoom) && !"*".equals(strCost)){
-			_param = new String [] {strCity, strRegion, strType, strRoom, strCost};
-			_query = "city = ? AND region = ? AND type = ? AND room = ? AND cost <= ?";
-		}else if ("*".equals(strRoom) && !"*".equals(strCost)) {
-			_param = new String [] {strCity, strRegion, strType, strCost};
-			_query = "city = ? AND region = ? AND type = ? AND cost <= ?";
-		}else if (!"*".equals(strRoom) && "*".equals(strCost)) {
-			_param = new String [] {strCity, strRegion, strType, strRoom};
-			_query = "city = ? AND region = ? AND type = ? AND room = ?";
-		}else if ("*".equals(strRoom) && "*".equals(strCost)) {
-			_param = new String [] {strCity, strRegion, strType};
-			_query = "city = ? AND region = ? AND type = ?";
-		}
+
 		
-		//Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, "city = ? AND region = ? AND type = ? AND room = ? AND cost <= ?", new String[] {strCity, strRegion, strType, strRoom, strCost},null,null, "cost");
+		String[] _param = new String[_arrParam.size()];
+		_arrParam.toArray(_param);
+		
+		//Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, "city = ? AND region = ? AND type = ? AND Status = ? AND room = ? AND cost <= ?", new String[] {strCity, strRegion, strType, strRoom, strStatus, strCost},null,null, "cost");
 		Cursor _cursorRealty = database.query("data", new String[] {"_id", "street", "room", "cost"}, _query, _param, null, null, "cost");
 				
 		_cursorRealty.moveToFirst();

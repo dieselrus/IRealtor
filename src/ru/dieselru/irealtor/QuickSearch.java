@@ -91,6 +91,7 @@ public class QuickSearch extends Activity {
         spinnerType.setAdapter(adapterType);
         
         ArrayList arrRegion = new ArrayList<String>();
+        arrRegion.add("*");
 		//Cursor friendCursor = database.query(_table, new String[] {FRIEND_ID, FRIEND_NAME},
 		//				     null, null,null,null, FRIEND_NAME);
 		Cursor _cursorRegion = database.query("Regions", new String[] {"_id", "name"}, null, null,null,null, "name");
