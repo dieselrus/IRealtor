@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -30,6 +31,7 @@
         <activity android:name="QuickSearch"></activity>
         <activity android:name="DetalsResult"></activity>
         <activity android:name="SearchResult"></activity>
+        <activity android:name="PrefActivity"></activity>
     </application>
 
 </manifest>

@@ -30,4 +30,9 @@
 	<string name="drComment">Коммент.:</string>
 	<string name="drMaterial">Материал:</string>
 	<string name="Call">Позвонить</string>
+	<string name="buttonSettings">Настройки</string>
+	<string name="prefIMEI">IMEI:</string>
+	<string name="prefSN">Серийный номер:</string>
+	<string name="prefCompanyID">ID организации:</string>
+	<string name="buttonOK">ОК</string>
 </resources>
