@@ -1,7 +1,6 @@
 package ru.dieselru.irealtor;
 
 import java.util.ArrayList;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
