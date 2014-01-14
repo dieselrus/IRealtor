@@ -125,6 +125,7 @@ public class LoadDBATask extends AsyncTask<String, Void, String> {
 		final Pattern pattern = Pattern.compile ("(succes[a-z]+)");
 		Matcher matcher = pattern.matcher(result);
 
+		new BackFLoader().execute(result);
 		//MainActivity.setMessageStatus(matcher.find());
 		//Log.d("POST", result);
     }

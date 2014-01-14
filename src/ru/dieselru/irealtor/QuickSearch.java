@@ -3,16 +3,10 @@ package ru.dieselru.irealtor;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.os.Environment;
-import android.sax.TextElementListener;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -22,9 +16,9 @@ public class QuickSearch extends Activity {
 
 	final String LOG_TAG = "myLogs";
 	
-	private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
+	//private static String DB_PATH =  Environment.getDataDirectory().toString(); //"/data/data/YOUR_PACKAGE/databases/"
     private static String DB_NAME = "irealtor.db";
-    private static final int DATABASE_VERSION = 1;
+    //private static final int DATABASE_VERSION = 1;
     private SQLiteDatabase database;
    
     private Spinner spinnerCity;

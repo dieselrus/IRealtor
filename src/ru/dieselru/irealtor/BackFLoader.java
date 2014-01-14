@@ -2,14 +2,22 @@ package ru.dieselru.irealtor;
 
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.channels.FileChannel;
+
 import android.app.ProgressDialog;
+import android.content.Context;
+//import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.os.Environment;
+import android.util.Log;
 
 public class BackFLoader extends AsyncTask<String, Integer, File> {
 	/**
@@ -20,9 +28,17 @@ public class BackFLoader extends AsyncTask<String, Integer, File> {
 	 */
 	private Exception m_error = null;
 
+	// объ€вл€ем диалог
+	public ProgressDialog dialog;
+	// контекст родительского класса
+	Context ctx;
+	  
 	// MainActivity ma = new MainActivity();
 
 	protected File doInBackground(String... _url) {
+		
+		//Log.d("FILE URL", _url[0]);
+		
 		URL url;
 		HttpURLConnection urlConnection;
 		InputStream inputStream;
@@ -79,29 +95,54 @@ public class BackFLoader extends AsyncTask<String, Integer, File> {
 	@Override
 	// обновл€ем progressDialog
 	protected void onProgressUpdate(Integer... values) {
-		MainActivity.progressDialog.setProgress((int) ((values[0] / (float) values[1]) * 100));
+		//MainActivity.progressDialog.setProgress((int) ((values[0] / (float) values[1]) * 100));
+		MainActivity.setProgres(values);
 	};
 
 	// Обработка результата работы нового потока и взаимодействие с элементами
-	// основного потока
-	protected void onPreExecute(String result) {
-		MainActivity.progressDialog.setMessage("Downloading ...");
-		MainActivity.progressDialog.setCancelable(false);
-		MainActivity.progressDialog.setMax(100);
-		MainActivity.progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-
-		MainActivity.progressDialog.show();
+	@Override
+	protected void onPreExecute() {
+		MainActivity.openProgres();
+		
+		super.onPreExecute();
 	}
-	
+
 	@Override
 	protected void onPostExecute(File file) {
 		// отображаем сообщение, если возникла ошибка
+		
 		if (m_error != null) {
 			m_error.printStackTrace();
+			//Log.d("FILE URL ERROR", m_error.getMessage());
 			return;
 		}
 		// закрываем прогресс и удал€ем временный файл
-		MainActivity.progressDialog.hide();
+		MainActivity.closeProgres();
+		//Log.d("FILE URL", "NO ERROR");
+		
+		try {
+			copy(file, Environment.getDataDirectory());
+		} catch (IOException e) {
+			e.printStackTrace();
+			//MainActivity.setToast("gggggg", MainActivity.this);
+		}
 		file.delete();
+		//String packageName = context.getPackageName();
+		//DB_PATH = String.format("//data//data//%s//databases//", packageName);
+		
 	}
+	
+	public static void copy(File source, File dest) throws IOException {
+        FileChannel sourceChannel = new FileInputStream(source).getChannel();
+        try {
+            FileChannel destChannel = new FileOutputStream(dest).getChannel();
+            try {
+                destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+            } finally {
+                destChannel.close();
+            }
+        } finally {
+            sourceChannel.close();
+        }
+    }
 }
